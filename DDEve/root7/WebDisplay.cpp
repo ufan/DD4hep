@@ -83,7 +83,7 @@ static long webdisplay(Detector& description, int argc, char** argv) {
   if (vol) {
     auto viewer = std::make_shared<GEOM_VIEWER>(&mgr);
     viewer->SelectVolume(vol->GetName());
-    viewer->SetLimits();
+    viewer->SetLimits(10000);
     viewer->SetDrawOptions(opt);
     viewer->Show();
     // add to global heap to avoid immediate destroy of RGeomViewer
