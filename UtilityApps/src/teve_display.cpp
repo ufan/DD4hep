@@ -69,19 +69,19 @@ static long teve_display(Detector& description, int /* argc */, char** /* argv *
 
   TGeoManager* mgr = &description.manager();
   mgr->SetNsegments(100); // Increase the visualization resolution.
-  mgr->SetMaxVisNodes(10000);
+  // mgr->SetMaxVisNodes(10000);
   TEveManager::Create();
 
   // mgr->SetVisOption(1) ;
-  // mgr->SetVisLevel(4) ;
+  // mgr->SetVisLevel(6) ;
   
   //  gEve->fGeometries->Add(new TObjString("DefaultGeometry"),mgr);
 
   TEveGeoTopNode* tn = new TEveGeoTopNode(mgr, mgr->GetTopNode());
   // option 0 in TEve seems to correspond to option 1 in TGeo ( used in geoDisplay ...)
   tn->SetVisOption(0) ;
-  tn->SetVisLevel(4);
-  tn->SetMaxVisNodes(10000);
+  tn->SetVisLevel(6);
+  // tn->SetMaxVisNodes(40000);
 
   // // ---- try to set transparency - does not seem to work ...
   // TGeoNode* node1 = gGeoManager->GetTopNode();
